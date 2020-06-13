@@ -4,9 +4,9 @@ import React,{useState, createContext} from 'react'
 export const ScoreContext = createContext()
 
 export const ScoreProvider = (props) => { 
-    const [homeScore, setHomeScore] = useState(1)
+    const [homeScore, setHomeScore] = useState(14)
     const [homeFieldGoal, setHomeFieldGoal] = useState(0)
-    const [awayScore, setAwayScore] = useState(2)
+    const [awayScore, setAwayScore] = useState(28)
     const [awayFieldGoal, setAwayFieldGoal] = useState(0)
     
 
