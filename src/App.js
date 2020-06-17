@@ -6,7 +6,8 @@ import "./App.css";
 import Score from './components/score/Score';
 import Timer from './components/timer/Timer';
 import ButtonRow from './components/buttons/ButtonRow';
-
+import Patriots from "./pa.png"
+import Steelers from "./ste.png"
 
 
 function App() {
@@ -19,9 +20,9 @@ function App() {
     <div className="container">
       <section className="scoreboard">
         <div className="topRow">
-          <Score teamName={'Lions'} match={'home'} score={homeScore}/>
+          <Score teamName={'Patriots'} match={'home'} score={homeScore} logo={Patriots}/>
           <Timer/>
-          <Score teamName={'Tigers'} match={'away'} score={awayScore}/>
+          <Score teamName={'Steelers'} match={'away'} score={awayScore} logo={Steelers}/>
         </div>
         <BottomRow/>
       </section>
