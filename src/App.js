@@ -28,7 +28,7 @@ function App() {
       <section className="buttons">
         <ButtonRow homeScore={homeScore}  setHomeScore={ setHomeScore} awayScore={awayScore} setAwayScore={setAwayScore} />
       </section>
-     </div> 
+    </div> 
    
   );
 }
