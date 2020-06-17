@@ -1,33 +1,35 @@
 //TODO: STEP 1 - Import the useState hook.
-import React from 'react'
-// import {ScoreContext} from '../ScoreContext'
+import React, {useState} from 'react'
+
 import BottomRow from "./BottomRow";
 import "./App.css";
-import HomeScore from "./components/homeTeam/HomeScore";
-import {ScoreProvider} from "./ScoreContext"
-import Buttons from "./components/buttons/Buttons";
-import AwayScorePoints from './components/awayTeam/AwayScore';
-
+import Score from './components/score/Score';
+import Timer from './components/timer/Timer';
+import ButtonRow from './components/buttons/ButtonRow';
 
 
 
 function App() {
+
+  const [homeScore, setHomeScore] = useState(0)
+  const [awayScore, setAwayScore] = useState(0)
+  
   return (
-    <ScoreProvider>
+    
     <div className="container">
       <section className="scoreboard">
         <div className="topRow">
-         <HomeScore name="Lions"/>
-          <div className="timer">00:03</div>
-          <AwayScorePoints name="Tigers"/>
+          <Score teamName={'Lions'} match={'home'} score={homeScore}/>
+          <Timer/>
+          <Score teamName={'Tigers'} match={'away'} score={awayScore}/>
         </div>
-        <BottomRow />
+        <BottomRow/>
       </section>
       <section className="buttons">
-        <Buttons/>
+        <ButtonRow homeScore={homeScore}  setHomeScore={ setHomeScore} awayScore={awayScore} setAwayScore={setAwayScore} />
       </section>
-    </div>
-    </ScoreProvider>
+     </div> 
+   
   );
 }
 
